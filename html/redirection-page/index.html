@@ -19,7 +19,9 @@
 
 <div style="width: 100%;text-align: center; background-color:#14012e;height: 85%">
     <h4 id="content" class="app-description-main">We are finding the best route for you .</h4>
-    <h4 class="app-description-second">If there is no redirect for a long time, please exit the APP and re-enter .</h4>
+    <h4 class="app-description-second">If there is no redirect for a long time, please click the refresh button below or exit the APP and re-enter .</h4>
+    <button style="opacity: 0.3;font-size: 100%;margin-top: 2%;" onclick="javascript:location.reload();">refresh</button>
+
 <!--    <div id="time-content" style="display: none;">-->
 <!--        <div style="color: #f1f1f1;padding-top: 3%">-->
 <!--            Automatically jump to <span id="domain"></span> after <span id="time" style="">4</span> seconds-->
@@ -36,6 +38,7 @@
 
 <script>
 
+//    tester();
 
     var domain = "";
     var prefix = "";
@@ -56,7 +59,6 @@
     var time = new Date().getTime();
     var speedTest = [];
     var isCalledTime = 0;
-    tester();
     function tester(){
         for (const i in urlList) {
             console.log(urlList[i]);
@@ -93,6 +95,7 @@
             }
         }
     }
+
 </script>
 </body>
 </html>
