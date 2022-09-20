@@ -8,14 +8,14 @@
             display:none;
         }
         .title{
-            color: #ff2a14;margin: 0px;padding-top: 30%;font-size: 200%;padding-left: 5%;padding-right: 5%;
+            color: #ff2a14;margin: 0px;padding-top: 70px;font-size: 30px;padding-left: 5%;padding-right: 5%;
         }
 
         .app-description-main{
-            color: #f1f1f1;margin: 0px;padding-top: 20%;font-size: 300%;padding-left: 5%;padding-right: 5%;
+            color: #f1f1f1;margin: 0px;padding-top: 20px;font-size: 40px;padding-left: 5%;padding-right: 5%;
         }
         .app-description-second{
-            color: #f1f1f1;margin: 0px;padding-top: 10%;font-size: 150%;padding-left: 5%;padding-right: 5%;
+            color: #f1f1f1;margin: 0px;padding-top: 20px;font-size: 30px;padding-left: 5%;padding-right: 5%;
         }
     </style>
 </head>
@@ -31,7 +31,7 @@
     <h4 class="app-description-second">If there is no redirect for a long time, please click the refresh button below or exit the APP and re-enter .</h4>
 
 
-    <button style="opacity: 0.9;font-size: 100%;background-color: #8d8d8d;color: #f1f1f1;padding: 0% 3% 1% 3%;border-radius: 15%;" onclick="javascript:location.reload();">refresh</button>
+    <button style="opacity: 0.9;font-size: 100%;background-color: #8d8d8d;color: #f1f1f1;padding: 0% 3% 1% 3%;border-radius: 10px; margin-top:5%" onclick="javascript:location.reload();">refresh</button>
 
 <!--    <div id="time-content" style="display: none;">-->
 <!--        <div style="color: #f1f1f1;padding-top: 3%">-->
@@ -49,7 +49,6 @@
 
 <script>
 
-    tester();
 
     var domain = "";
     var prefix = "";
@@ -70,6 +69,8 @@
     var time = new Date().getTime();
     var speedTest = [];
     var isCalledTime = 0;
+    tester();
+
     function tester(){
         for (const i in urlList) {
             console.log(urlList[i]);
