@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+    <meta charset="UTF-8">
+    <title>happistar</title>
+    <style>
+        .check-host{
+            display:none;
+        }
+    </style>
+</head>
+<body style="margin: 0px;padding: 0px;height: 100%">
+
+<div style="width: 100%;text-align: center; background-color:#14012e;height: 85%">
+    <h4 style="color: #f1f1f1;margin: 0px;padding-top: 50%;font-size: 600%;padding-left: 5%;padding-right: 5%;">We are finding the best way for you .</h4>
+<!--    <div id="time-content" style="display: none;">-->
+<!--        <div style="color: #f1f1f1;padding-top: 3%">-->
+<!--            Automatically jump to <span id="domain"></span> after <span id="time" style="">4</span> seconds-->
+<!--        </div>-->
+<!--    </div>-->
+</div>
+
+
+<footer style="
+ background: linear-gradient( to bottom,#14012e,#850262);
+ height: 15%;
+">
+</footer>
+
+<script>
+
+
+    var domain = "";
+    var prefix = "";
+    var urlList = [];
+    var ping = 1;
+
+    try {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "GET", './static/data/data.json', false );
+        xmlHttp.send( null );
+        urlList = JSON.parse(xmlHttp.responseText);
+        console.log(urlList);
+
+    }catch(err){
+        console.log(err);
+    }
+
+    var time = new Date().getTime();
+    var speedTest = [];
+    var isCalledTime = 0;
+    tester();
+    function tester(){
+        for (const i in urlList) {
+            console.log(urlList[i]);
+            time =  new Date().getTime();
+            var script = document.createElement('script');
+            script.src= prefix + urlList[i]+"/handshake.php";
+            //script.setAttribute("onerror","testError("+i+")");
+            //script.setAttribute("onload","testOnload("+i+")");
+            document.body.appendChild(script);
+        }
+
+    }
+
+    function testOnload(d){
+
+
+    }
+
+    function testError(d){
+        console.log("error ..."+ urlList[d]);
+        isCalledTime = 0;
+        //time =  new Date().getTime();
+        speedTest[d] = 99999;
+    }
+
+    function testCallback(domain){
+        var currentUrl = "";
+        for (const i in urlList) {
+            if(urlList[i].indexOf(domain) !== -1){
+                currentUrl = urlList[i];
+                console.log("handshake domain "+domain);
+                window.location = domain;
+                break;
+            }
+        }
+    }
+</script>
+</body>
+</html>
