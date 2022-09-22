@@ -1,0 +1,886 @@
+*, :after, :before {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+li, ul {
+    list-style: none
+}
+
+p {
+    margin-bottom: 0 !important
+}
+
+body {
+    font-size: 12px !important
+}
+
+.scroll-bar {
+    overflow: auto
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+    height: 3px
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, .1);
+    border-left: 1px solid #e9e9e9
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #c1c1c1;
+    border-radius: 4px
+}
+
+::-webkit-scrollbar-button {
+    background-color: #333;
+    display: none
+}
+
+::-webkit-scrollbar-corner {
+    background-color: #666
+}
+
+.app-container {
+    max-width: 750px;
+    height: auto;
+    margin: 0 auto
+}
+
+.app-container .app-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 20px 0;
+    margin: 0 6%
+}
+
+.app-container .app-info .app-logo img {
+    width: 28vw;
+    border-radius: 20px;
+    margin-right: 10px
+}
+
+.app-container .app-info .player-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 100vw
+}
+
+.app-container .app-info .prism-player {
+    z-index: 8000;
+    margin-top: 20px;
+    -ms-touch-action: none;
+    touch-action: none
+}
+
+.app-container .app-info .show-live {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 6000;
+    background-color: rgba(0, 0, 0, .6);
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    -ms-touch-action: none;
+    touch-action: none
+}
+
+.app-container .app-info .close-live {
+    color: #fff;
+    font-size: 1.5rem;
+    position: relative;
+    top: 10px;
+    z-index: 9000;
+    left: 4px
+}
+
+.app-container .app-info .app-info-detail {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    margin-left: 3%
+}
+
+.app-container .app-info .app-info-detail strong {
+    margin-top: 6px;
+    display: block;
+    font-size: 20px;
+    font-weight: 700
+}
+
+.app-container .app-info .app-info-detail p {
+    margin-top: .3em;
+    font-size: 14px;
+    color: #8a8a90
+}
+
+.app-container .app-info .app-info-detail p.tip-p {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 90%
+}
+
+.app-container .app-info .app-info-detail p span {
+    color: #0070c9
+}
+
+.app-container .app-info .app-info-detail .app-download {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 60px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.app-container .app-info .app-info-detail .app-download .app-info-install {
+    font-size: 15px;
+    color: #0070c9
+}
+
+.app-container .app-info .app-info-detail .app-download .app-info-warning {
+    color: red
+}
+
+.app-container .app-info .app-info-detail .app-download .ant-progress > .ant-progress-inner > .ant-progress-text .progress-circle-inside {
+    height: 20px;
+    width: 20px
+}
+
+.app-container .app-info .app-info-detail .app-download .ant-progress > .ant-progress-inner > .ant-progress-text .progress-circle-inside:before {
+    position: absolute;
+    content: "";
+    width: 8px;
+    height: 8px;
+    background-color: #067afe;
+    top: 28%;
+    left: 35%
+}
+
+.app-container .app-info .app-info-detail .app-download .app-info-frame {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column
+}
+
+.app-container .app-info .app-info-detail .app-download .app-info-frame .app-info-progress, .app-container .app-info .app-info-detail .app-download .app-info-progress {
+    margin-top: 20px;
+    margin-bottom: 10px
+}
+
+.app-container .app-info .app-info-detail .app-download .bt-sellout {
+    border-radius: 20px;
+    background: #cacaca;
+    color: #fff;
+    width: 80px
+}
+
+.app-container .app-info .app-info-detail .app-download .bt-not-available {
+    border-radius: 20px;
+    background: #cacaca;
+    color: #fff;
+    font-size: 12px;
+    min-width: 122px
+}
+
+.app-container .app-info .app-info-detail .app-download .sellout, .app-container .app-info .app-info-detail .app-download .sellout-limit {
+    margin-left: 4px;
+    margin-right: 4px
+}
+
+.app-container .app-info .app-info-detail .app-download .sellout-limit {
+    font-size: 14px;
+    max-width: 220px;
+    white-space: pre-wrap;
+    line-height: 16px
+}
+
+.app-container .app-rate {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: #8e8f92;
+    margin: 0 6%
+}
+
+.app-container .app-rate p {
+    font-size: 12px;
+    color: #d8d8d8
+}
+
+.app-container .app-rate .app-rate-score {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1
+}
+
+.app-container .app-rate .app-rate-score strong {
+    font-weight: 700;
+    font-size: 16px
+}
+
+.app-container .app-rate .app-rate-score img {
+    width: 80px;
+    margin-left: 5px
+}
+
+.app-container .app-rate .app-age {
+    text-align: right
+}
+
+.app-container .app-swiper-scroll {
+    margin: 0 6%;
+    padding: 20px 0;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.app-container .app-swiper-scroll .app-swiper-scroll-item {
+    margin-right: 20px
+}
+
+.app-container .app-swiper-scroll .app-swiper-scroll-item img {
+    width: auto;
+    height: auto;
+    min-width: 52vw;
+    max-width: 82vw;
+    max-height: 65vh;
+    border-radius: 10px
+}
+
+.app-container .app-swiper-scroll::-webkit-scrollbar {
+    display: none
+}
+
+.app-container .app-intro {
+    padding: 20px 0;
+    margin: 0 6%;
+    border-top: 1px solid #e5e5e5
+}
+
+.app-container .app-intro .app-intro-brief {
+    position: relative;
+    overflow: hidden;
+    line-height: 1.8;
+    font-size: 14px;
+    max-height: 5.4em
+}
+
+.app-container .app-intro .app-intro-brief span {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding-left: 1em;
+    color: #067afe;
+    background-color: #fff
+}
+
+.app-container .app-intro .app-intro-brief p {
+    color: #000;
+    word-wrap: break-word;
+    word-break: break-all
+}
+
+.app-container .app-intro .app-intro-brief.show {
+    max-height: 100em
+}
+
+.app-container .section-title {
+    font-size: 20px;
+    margin-bottom: .85em
+}
+
+.app-container .app-comment {
+    padding: 20px 0;
+    margin: 0 6%;
+    border-top: 1px solid #e5e5e5
+}
+
+.app-container .app-comment .app-comment-con {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.app-container .app-comment .app-comment-con .comment-left {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1
+}
+
+.app-container .app-comment .app-comment-con .comment-left strong {
+    font-size: 60px;
+    line-height: 43px;
+    color: #4a4a4e;
+    font-weight: 700
+}
+
+.app-container .app-comment .app-comment-con .comment-left p {
+    width: 91px;
+    color: #7b7b7b;
+    margin-top: 10px;
+    font-size: 12px;
+    text-align: center
+}
+
+.app-container .app-comment .app-comment-con .comment-right {
+    width: 63%
+}
+
+.app-container .app-comment .app-comment-con .comment-right .comment-star-list li {
+    line-height: 1
+}
+
+.app-container .app-comment .app-comment-con .comment-right .comment-star-list .comment-star {
+    position: relative;
+    width: 46px;
+    height: 7px;
+    display: inline-block;
+    vertical-align: middle
+}
+
+.app-container .app-comment .app-comment-con .comment-right .comment-star-list .comment-star img {
+    display: block;
+    width: 100%;
+    height: 100%
+}
+
+.app-container .app-comment .app-comment-con .comment-right .comment-star-list .comment-star > div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: #fff
+}
+
+.app-container .app-comment .app-comment-con .comment-right .comment-star-list .comment-progress {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    width: calc(100% - 56px);
+    height: 2px;
+    background: #e9e9ec;
+    border-radius: 2px;
+    margin-left: 5px
+}
+
+.app-container .app-comment .app-comment-con .comment-right .comment-star-list .comment-progress > div {
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #4a4a4e;
+    border-radius: 2px
+}
+
+.app-container .app-comment .app-comment-con .comment-right p {
+    margin-top: 5px;
+    color: #7b7b7b;
+    text-align: right;
+    font-size: 12px
+}
+
+.app-container .app-comment .app-comment-con .comment-star-list li:first-child .comment-progress div {
+    width: 90%
+}
+
+.app-container .app-comment .app-comment-con .comment-star-list li:nth-child(2) .comment-progress div {
+    width: 10%
+}
+
+.app-container .app-comment .app-comment-con .comment-star-list li:nth-child(2) .comment-star div {
+    width: 20%
+}
+
+.app-container .app-comment .app-comment-con .comment-star-list li:nth-child(3) .comment-star div {
+    width: 40%
+}
+
+.app-container .app-comment .app-comment-con .comment-star-list li:nth-child(4) .comment-star div {
+    width: 60%
+}
+
+.app-container .app-comment .app-comment-con .comment-star-list li:nth-child(5) .comment-star div {
+    width: 80%
+}
+
+.app-container .app-version {
+    padding: 20px 0;
+    margin: 0 6%;
+    border-top: 1px solid #e5e5e5;
+    height: auto
+}
+
+.app-container .app-version p {
+    color: #000
+}
+
+.app-container .app-information {
+    margin: 0 6%;
+    padding-top: 20px;
+    border-top: 1px solid #e5e5e5
+}
+
+.app-container .app-information ul > li {
+    line-height: 3.5;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-bottom: 1px solid #f2f2f2
+}
+
+.app-container .app-information ul > li .information-left {
+    color: #737379
+}
+
+.app-container .app-information ul > li .information-right {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    text-align: right
+}
+
+.app-container .app-information ul > li .information-right p {
+    display: inline-block;
+    vertical-align: middle;
+    width: 80%;
+    line-height: 1.2
+}
+
+.app-container .app-information ul > li:last-child {
+    border-bottom: none
+}
+
+.app-container .app-disclaimer {
+    padding: 10px;
+    color: #999;
+    background: #f9f9f9
+}
+
+.app-container .app-mask {
+    overflow: hidden;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0
+}
+
+.app-container .app-mask img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%
+}
+
+.app-container .app-mask2 {
+    overflow: hidden;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0
+}
+
+.app-container .app-mask2 .mask {
+    -webkit-box-orient: vertical;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    z-index: 200
+}
+
+.app-container .app-mask2 .mask, .app-container .app-mask2 .mask .mask-top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.app-container .app-mask2 .mask .mask-top {
+    -webkit-box-orient: horizontal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    margin-top: 80px;
+    width: 90%;
+    height: 160px;
+    background-color: #64b4f8;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px
+}
+
+.app-container .app-mask2 .mask .mask-top img {
+    width: 100px;
+    height: 100px
+}
+
+.app-container .app-mask2 .mask .mask-top .mask-top-right {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-left: 40px;
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 20px
+}
+
+.app-container .app-mask2 .mask .mask-top .mask-top-right span {
+    color: red
+}
+
+.app-container .app-mask2 .mask .mask-foot {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 90%;
+    height: 80px;
+    background-color: #fff;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px
+}
+
+.app-container .app-mask2 .mask .mask-foot .mask-left {
+    width: 60%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background: #f0f4f7;
+    padding-left: 40px
+}
+
+.app-container .app-mask2 .mask .mask-foot .mask-btn, .app-container .app-mask2 .mask .mask-foot .mask-left {
+    height: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 1.2rem
+}
+
+.app-container .app-mask2 .mask .mask-foot .mask-btn {
+    width: 80px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: #64b4f8;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #fff
+}
+
+.pc-container {
+    text-align: center
+}
+
+.pc-container .pc-app-info {
+    padding: 20px 0
+}
+
+.pc-container .pc-app-info h2 {
+    margin: 20px 0
+}
+
+.pc-container .pc-app-info p {
+    font-size: 20px;
+    margin-top: 20px
+}
+
+.pc-container .pc-app-info img {
+    border-radius: 10px
+}
+
+.pc-container .pc-app-qrcode img {
+    width: 200px;
+    height: 200px
+}
+
+.apk-download-toast {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 1rem;
+    margin-top: 200px
+}
+
+.apk-download-toast span {
+    margin-top: 20px
+}
+
+.app-infomation-cat {
+    color: #0070c9 !important
+}
+
+.ant-result-title {
+    color: #727e90 !important;
+    font-size: 20px !important
+}
+
+.no_data {
+    text-align: center;
+    clear: both;
+    background-color: #fafafa;
+    height: 100vh;
+    padding: 0 20px
+}
+
+.no_data .no_dataImg {
+    width: 240px;
+    padding: 170px 0 50px
+}
+
+.no_data .no_dataText {
+    text-align: center;
+    padding: 0 0 90px;
+    color: #bebebe;
+    font-size: 24px;
+    font-weight: 700
+}
+
+.ant-result-extra, .ant-result-icon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+
+@media screen and (max-width: 350px) {
+    .app-container .app-mask2 {
+        overflow: hidden;
+        z-index: 10;
+        background-color: rgba(0, 0, 0, .5);
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0
+    }
+
+    .app-container .app-mask2 .mask {
+        -webkit-box-orient: vertical;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        z-index: 200
+    }
+
+    .app-container .app-mask2 .mask, .app-container .app-mask2 .mask .mask-top {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-direction: normal;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center
+    }
+
+    .app-container .app-mask2 .mask .mask-top {
+        -webkit-box-orient: horizontal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        margin-top: 80px;
+        width: 90%;
+        height: 120px;
+        background-color: #64b4f8;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px
+    }
+
+    .app-container .app-mask2 .mask .mask-top img {
+        width: 80px;
+        height: 80px
+    }
+
+    .app-container .app-mask2 .mask .mask-top .mask-top-right {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        margin-left: 20px;
+        color: #fff;
+        font-size: 1rem;
+        line-height: 20px
+    }
+
+    .app-container .app-mask2 .mask .mask-top .mask-top-right span {
+        color: red
+    }
+
+    .app-container .app-mask2 .mask .mask-foot {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        width: 90%;
+        height: 80px;
+        background-color: #fff;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px
+    }
+
+    .app-container .app-mask2 .mask .mask-foot .mask-left {
+        width: 60%;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        background: #f0f4f7;
+        padding-left: 40px
+    }
+
+    .app-container .app-mask2 .mask .mask-foot .mask-btn, .app-container .app-mask2 .mask .mask-foot .mask-left {
+        height: 40px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        font-size: 1.2rem
+    }
+
+    .app-container .app-mask2 .mask .mask-foot .mask-btn {
+        width: 80px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        background-color: #64b4f8;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        color: #fff
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .no_data {
+        text-align: center;
+        clear: both;
+        background-color: #fafafa;
+        height: 100vh;
+        padding: 0 20px
+    }
+
+    .no_data .no_dataImg {
+        width: 140px;
+        padding: 70px 0 50px
+    }
+
+    .no_data .no_dataText {
+        text-align: center;
+        padding: 0 0 90px;
+        color: #bebebe;
+        font-size: 1px;
+        font-weight: 700
+    }
+}
+
+.app-captcha {
+    margin: 10% 30px 0;
+    text-align: center
+}
+
+.app-captcha .ant-input {
+    max-width: 360px
+}
+
+.app-captcha .ant-form-item-control {
+    float: left;
+    width: 100%;
+    text-align: left
+}
+
+.app-captcha-image {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 600px;
+    font-size: 20px;
+    color: #75878a
+}
+
+.app-captcha-image .tencent-captcha-text {
+    background-color: #f0f0f4;
+    padding: 20px 40px
+}

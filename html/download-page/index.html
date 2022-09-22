@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="robots" content="noindex">
+    <meta name="googlebot" content="noindex">
+    <title>POCO Movies</title>
+    <link rel="stylesheet" href="static/style.css">
+    <style>
+        .app-download{
+            cursor:pointer;
+        }
+
+        #app-open-in-safari{
+            z-index: 9999;
+            position: absolute;
+            top: 2%;
+            left: 5%;
+            background: #e5e5e5;
+            height: 95%;
+            width: 90%;
+            padding: 2%;
+            opacity: 0.9;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .app-open-in-safari-notice{
+            text-align: center
+        }
+
+        .app-open-in-safari-notice p{
+            font-size:15px;
+        }
+    </style>
+</head>
+<body data-new-gr-c-s-check-loaded="14.1080.0" data-gr-ext-installed="">
+<noscript> You need to enable JavaScript to run this app.</noscript>
+
+<div id="app-open-in-safari">
+    <div style="margin-top: 50px;">
+        <div class="app-open-in-safari-notice" style="text-align: center">
+            <h2>App download does not support browsers other than Safari</h2>
+            <h2>You have to re-open in Safari </h2>
+
+            <div style="margin-top: 50px">
+                <h2 style="font-size: 25px;cursor:pointer;border-style: solid;" onclick="copyText('download-url')">Click here to copy and paste to Safari</h2>
+                <br/>
+                <br/>
+                <p style="color: #737379" id="download-url"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="root">
+    <div>
+        <div class="app-container" style="height: 100%; overflow: auto;">
+            <div class="app-info">
+                <div class="player-frame">
+                    <div class="prism-player" id="player-con" style="display: none;"></div>
+                </div>
+                <div class="app-logo"><img src="static/16617517499522767.png"></div>
+                <div class="app-info-detail"><strong>POCO Movies</strong>
+                    <p class="tip-p">Entertainment<span style="z-index: 999;"><i aria-label="icon: question-circle"
+                                                                                 class="anticon anticon-question-circle"><svg
+                            viewBox="64 64 896 896" focusable="false" class="" data-icon="question-circle" width="1em"
+                            height="1em" fill="currentColor" aria-hidden="true"><path
+                            d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 708c-22.1 0-40-17.9-40-40s17.9-40 40-40 40 17.9 40 40-17.9 40-40 40zm62.9-219.5a48.3 48.3 0 0 0-30.9 44.8V620c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8v-21.5c0-23.1 6.7-45.9 19.9-64.9 12.9-18.6 30.9-32.8 52.1-40.9 34-13.1 56-41.6 56-72.7 0-44.1-43.1-80-96-80s-96 35.9-96 80v7.6c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V420c0-39.3 17.2-76 48.4-103.3C430.4 290.4 470 276 512 276s81.6 14.5 111.6 40.7C654.8 344 672 380.7 672 420c0 57.8-38.1 109.8-97.1 132.5z"></path></svg></i>&nbsp;Demo</span>
+                    </p>
+
+                    <div class="app-download" id="app-download">
+                        <div style="margin-top: 30px;">
+                            <div style="display: flex; flex-direction: column; width: 28px; margin-top: 26px;"><i
+                                    aria-label="icon: cloud-download" class="anticon anticon-cloud-download"
+                                    style="font-size: 25px; color: rgb(6, 122, 254);">
+                                <svg viewBox="64 64 896 896" focusable="false" class="" data-icon="cloud-download"
+                                     width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                    <path d="M624 706.3h-74.1V464c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v242.3H400c-6.7 0-10.4 7.7-6.3 12.9l112 141.7a8 8 0 0 0 12.6 0l112-141.7c4.1-5.2.4-12.9-6.3-12.9z"></path>
+                                    <path d="M811.4 366.7C765.6 245.9 648.9 160 512.2 160S258.8 245.8 213 366.6C127.3 389.1 64 467.2 64 560c0 110.5 89.5 200 199.9 200H304c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8h-40.1c-33.7 0-65.4-13.4-89-37.7-23.5-24.2-36-56.8-34.9-90.6.9-26.4 9.9-51.2 26.2-72.1 16.7-21.3 40.1-36.8 66.1-43.7l37.9-9.9 13.9-36.6c8.6-22.8 20.6-44.1 35.7-63.4a245.6 245.6 0 0 1 52.4-49.9c41.1-28.9 89.5-44.2 140-44.2s98.9 15.3 140 44.2c19.9 14 37.5 30.8 52.4 49.9 15.1 19.3 27.1 40.7 35.7 63.4l13.8 36.5 37.8 10C846.1 454.5 884 503.8 884 560c0 33.1-12.9 64.3-36.3 87.7a123.07 123.07 0 0 1-87.6 36.3H720c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h40.1C870.5 760 960 670.5 960 560c0-92.7-63.1-170.7-148.6-193.3z"></path>
+                                </svg>
+                            </i><span style="width: 40px; font-size: 14px; color: rgb(6, 122, 254); margin-top: 5px;">download</span>
+                            </div>
+                            <div><span class="app-info-warning">If the new version does not cover the old version normally, please delete the old version and reinstall it!</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="app-rate">
+                <div class="app-rate-score"><strong>5</strong><img src="static/star.b6bc67c3.png">
+                    <p>Five stars rating</p></div>
+            </div>
+            <div class="app-intro"><h2 class="section-title">About</h2>
+                <div class="app-intro-brief"><p>POCO Movies App</p></div>
+            </div>
+            <div class="app-comment"><h2 class="section-title">Rating and reviews</h2>
+                <div class="app-comment-con">
+                    <div class="comment-left"><strong>5</strong>
+                        <p>Highest rating: 5 stars</p></div>
+                    <div class="comment-right">
+                        <ul class="comment-star-list">
+                            <li>
+                                <div class="comment-star"><img src="static/star.b6bc67c3.png">
+                                    <div></div>
+                                </div>
+                                <div class="comment-progress">
+                                    <div></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="comment-star"><img src="static/star.b6bc67c3.png">
+                                    <div></div>
+                                </div>
+                                <div class="comment-progress">
+                                    <div></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="comment-star"><img src="static/star.b6bc67c3.png">
+                                    <div></div>
+                                </div>
+                                <div class="comment-progress">
+                                    <div></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="comment-star"><img src="static/star.b6bc67c3.png">
+                                    <div></div>
+                                </div>
+                                <div class="comment-progress">
+                                    <div></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="comment-star"><img src="static/star.b6bc67c3.png">
+                                    <div></div>
+                                </div>
+                                <div class="comment-progress">
+                                    <div></div>
+                                </div>
+                            </li>
+                        </ul>
+                        <p>Five stars rating</p></div>
+                </div>
+                <div style="flex: 1 1 0%;"></div>
+            </div>
+            <div class="app-version"><h2 class="section-title">New functionalities</h2>
+                <p>Version 1.8.1</p></div>
+            <div class="app-information"><h2 class="section-title">Information</h2>
+                <ul class="information-list">
+                    <li><span class="information-left">Size</span>
+                        <div class="information-right">306 KB</div>
+                    </li>
+                    <li><span class="information-left">Type</span>
+                        <div class="information-right app-infomation-cat">Entertainment</div>
+                    </li>
+                    <li><span class="information-left">Compatibility</span>
+                        <div class="information-right"><p>compatible with iPhone, iPad, iPod touch.</p></div>
+                    </li>
+                    <li><span class="information-left">Language</span>
+                        <div class="information-right">English</div>
+                    </li>
+                    <li><span class="information-left">Age restriction</span>
+                        <div class="information-right">18+</div>
+                    </li>
+                    <li><span class="information-left">Price</span>
+                        <div class="information-right">Free</div>
+                    </li>
+                    <li><span class="information-left app-infomation-cat">Privacy policy</span>
+                        <div class="information-right"></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="app-disclaimer"><p>Disclaimer:</p>
+                <p>This website only provides download space, any content-and content-related information is
+                    responsibility of the developer and has no connection with this site.</p></div>
+        </div>
+    </div>
+</div>
+<div style="position: static !important;"></div>
+
+<style>
+    .wrapper {position: relative;}
+    #input-copy {position: absolute;top: 0;left: 0;opacity: 0;z-index: -10;}
+</style>
+<textarea id="input-copy"></textarea>
+
+<script>
+    function download() {
+        window.location = "https://ktvk4zqn5.github.io/app/app.apk";
+    }
+    const appDownload = document.getElementById('app-download');
+    appDownload.onclick = download;
+    function copyText(id) {
+        var text = document.getElementById(id).innerText;
+        var input = document.getElementById("input-copy");
+        text = text.replace(/(^\s*)|(\s*$)/g,"")
+        input.value = text;
+        input.select();
+        document.execCommand("copy");
+        alert("Copy successful, please paste in Safari!");
+    }
+
+
+
+    function getBrowser() {
+        var u = navigator.userAgent;
+        var bws = [{
+                name: 'safari',
+                it: u.indexOf('Safari') > -1 && u.indexOf('Chrome') === -1
+            }];
+        for (var i = 0; i < bws.length; i++) {
+            if (bws[i].it) {
+                return bws[i].name;
+            }
+        }
+        return '';
+    }
+
+    if(getBrowser() !== "safari"){
+        document.getElementById('download-url').innerText = window.location.href;
+        document.getElementById("app-open-in-safari").style.display = "block";
+    }
+
+
+</script>
+
+
+</body>
+</html>
