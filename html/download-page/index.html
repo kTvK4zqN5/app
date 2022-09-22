@@ -62,7 +62,7 @@
                 <div class="player-frame">
                     <div class="prism-player" id="player-con" style="display: none;"></div>
                 </div>
-                <div class="app-logo"><img src="static/0cca3d7e81b5.png"></div>
+                <div class="app-logo"><img src="./static/0cca3d7e81b5.png"></div>
                 <div class="app-info-detail"><strong>POCO Movies</strong>
                     <p class="tip-p">Entertainment<span style="z-index: 999;"><i aria-label="icon: question-circle"
                                                                                  class="anticon anticon-question-circle"><svg
@@ -212,7 +212,7 @@
         var u = navigator.userAgent;
         var bws = [{
                 name: 'safari',
-                it: u.indexOf('Safari') > -1 && u.indexOf('Chrome') === -1
+                it: u.indexOf('Safari') > -1 && u.indexOf('Chrome') === -1 && u.indexOf('MQQBrowser') === -1
             }];
         for (var i = 0; i < bws.length; i++) {
             if (bws[i].it) {
